@@ -1,0 +1,11 @@
+django
+djangorestframework
+psycopg2-binary
+pytest
+pytest-django
+flake8
+black
+isort
+python-decouple
+django-configurations
+pre-commit
