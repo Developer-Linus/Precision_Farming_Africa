@@ -72,7 +72,7 @@ DATABASES = {
         'HOST': config('DATABASE_HOST'),
         'PORT': config('DATABASE_PORT'),
         'TEST': {
-            'NAME': 'postgres',
+            'NAME': 'test_db',
         },
     }
 }
