@@ -29,6 +29,7 @@ def test_create_superuser():
     assert superuser.email == 'admin@example.com'
     assert superuser.check_password('adminpass123')
     assert superuser.is_staff is True
+    assert superuser.is_active is True
     assert superuser.is_superuser is True
     assert superuser.role == 'admin'
 

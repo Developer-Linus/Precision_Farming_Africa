@@ -25,3 +25,8 @@ The Precision Farming API will enable farmers to:
 
 After trying multiple solutions without success, I finally turned to the **Docker documentation** as my last resort. Digging deeper, I discovered the root of the problem: I needed to install **Docker Desktop** and configure it properly so that the extension could detect it.
 > **Lesson Learned**: Never underestimate the value of official documentation when working on software projects. It can save you time and allow you to focus on other critical development tasks.
+2. In this project, I implemented a **custom user model** in Django where newly registered users had `is_active = False` by default, requiring email confirmation to activate their accounts. The issue emerged when I registered a superuser through the admin page and couldn't log in to the admin panel—even though the credentials were correct.
+
+After several unsuccessful attempts, I realized that the admin account was also being created as **inactive**, making it impossible to log in. The default behavior I set for regular users was unintentionally applied to admin users as well. To fix this, I added an `extra_defaults` configuration to ensure that admin accounts are created with `is_active = True`.
+
+> **Lesson Learned**: Always test custom user flows thoroughly, especially when overriding default behavior. A small misconfiguration can block access to critical features like the admin dashboard.
